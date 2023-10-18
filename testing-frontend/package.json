@@ -1,5 +1,5 @@
 {
-  "name": "frontend-starter-repo",
+  "name": "testing-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,8 +9,7 @@
     "export": "next export",
     "lint": "next lint",
     "check-types": "tsc --noEmit --pretty",
-    "test": "jest",
-    "prepare": "husky install"
+    "test": "jest"
   },
   "dependencies": {
     "next": "12.2.2",
