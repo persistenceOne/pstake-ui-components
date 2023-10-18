@@ -4,3 +4,4 @@ dist
 .sass-cache
 #IDE folder
 .idea
+.DS_Store
