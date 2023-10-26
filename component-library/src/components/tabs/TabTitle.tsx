@@ -18,12 +18,10 @@ const TabTitle: React.FC<Props> = ({
   return (
     <button
       className={`${
-        selectedTab === index ? "active text-red" : ""
-      } flex items-center justify-center p-4 text-sm font-medium
-      first:ml-0 disabled:cursor-not-allowed disabled:text-gray-400
-       disabled:dark:text-gray-500 base active text-gray-500
-       hover:bg-gray-50 hover:text-gray-600 dark:text-gray-400
-        dark:hover:bg-gray-800  dark:hover:text-gray-300 tabTitle`}
+        selectedTab === index ? "active" : ""
+      } flex items-center justify-center bg-black-500 text-white-600 text-base py-[12px] px-[10px] font-semibold leading-[24px] 
+      disabled:cursor-not-allowed disabled:text-gray-400
+       disabled:dark:text-gray-500 base tabTitle flex-1`}
       onClick={() => setSelectedTab(index)}
       disabled={disable}
     >

@@ -3,16 +3,16 @@ import TabTitle from "./TabTitle";
 
 export type TabsProps = {
   children: ReactElement[];
+  className?: string;
 };
 
 export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
-  ({ children }, ref) => {
+  ({ children, className }, ref) => {
     const [selectedTab, setSelectedTab] = useState(0);
     return (
-      <div className="tabs">
+      <div className={`tabs ${className}`}>
         <div
-          className="tabsHeader flex text-center flex-wrap
-         border-b border-gray-200 dark:border-gray-700"
+          className="tabsHeader flex text-center flex-wrap"
         >
           {children.map((item, index) => (
             <TabTitle
@@ -30,10 +30,4 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
     );
   }
 );
-// const Tabs: React.FC<TabsProps> = ({ children }) => {
-//     const [selectedTab, setSelectedTab] = useState(0)
-//
-//
-// }
-//
-// export default Tabs
+

@@ -1,0 +1,13 @@
+/* tabs */
+.tabsHeader .tabTitle:first-child {
+    border-radius: 0.375rem 0 0 0.375rem;
+}
+
+.tabsHeader .tabTitle:last-child {
+    border-radius: 0 0.375rem 0.375rem 0;
+}
+
+.tabTitle.active {
+    @apply bg-white-200;
+    @apply text-black-500;
+}

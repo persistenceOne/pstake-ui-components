@@ -1,5 +1,6 @@
 import React from "react";
 import { forwardRef } from "../../utils/forwardRef";
+import "./styles.css";
 
 export type TabProps = {
   title: string;

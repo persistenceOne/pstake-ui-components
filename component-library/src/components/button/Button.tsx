@@ -16,7 +16,7 @@ export const Button = ({
         <button
             onClick={onClick}
             disabled={disabled}
-            className={`text-green-700 py-2.5 px-4 appButton ${type} ${size} ${className}`}
+            className={`py-2.5 px-4 appButton ${type} ${size} ${className}`}
         >
             {content}
         </button>
