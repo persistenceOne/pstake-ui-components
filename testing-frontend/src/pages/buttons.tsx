@@ -5,7 +5,7 @@ import DropdownsList from "../components/organisms/dropdowns";
 
 const Button: NextPage = () => {
     return (
-        <div className={"p-4"}>
+        <div className={"p-4 mb-8"}>
             <Buttons/>
             <TabsContainer/>
             <DropdownsList/>

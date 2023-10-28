@@ -2,7 +2,6 @@ import React, { forwardRef, useRef } from "react";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 import {useOnClickOutside} from "../../utils/useOnClickOutside";
 import {Button} from "../button";
-import {Icon} from "../Icon";
 
 export type DropdownButtonVariants = "primary" | "custom";
 export type DropdownType = "hover" | "click";
@@ -18,7 +17,7 @@ export type DropdownProps = {
     dropDownVariantBg?: string;
     dropDownContentClass?: string;
     dropDownButtonClass?: string;
-    dropDownIcon?: boolean;
+    dropDownIcon?: any;
     closeDropdown?: boolean;
     closeHandler?: (closeDropdown: boolean) => void;
 } & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
@@ -72,12 +71,11 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
                         <>
                             {dropdownLabel}
                             {dropDownIcon ? (
-                                <Icon
-                                    viewClass={`${
-                                        !closeDropdown ? "rotate-360" : "rotate-360"
-                                    } dropDownIcon mx-2 !w-[10px] ease-in duration-200  rotate-90 fill-[#A6A6A6]`}
-                                    iconName="chevron"
-                                />
+                                <div className={`${
+                                    !closeDropdown ? "rotate-360" : "rotate-360"
+                                } dropDownIcon mx-2 ease-in duration-200  rotate-90`}>
+                                    {dropDownIcon}
+                                </div>
                             ) : (
                                 ""
                             )}
