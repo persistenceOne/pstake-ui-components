@@ -1,5 +1,5 @@
 import React from "react";
-import {Button} from "@persistenceone/pstake-ui-components";
+import {Button, Copy} from "@persistenceone/pstake-ui-components";
 
 
 const Buttons = () => {
@@ -24,6 +24,7 @@ const Buttons = () => {
             <Button size={"small"} content={"Tertiary Small"} className={"mb-3 mx-2"} type={"tertiary"}/>
             <Button size={"small"} content={"Tertiary Disabled"} disabled={true} className={"mb-3 mx-2"} type={"tertiary"}/>
         </div>
+
     </div>;
 };
 

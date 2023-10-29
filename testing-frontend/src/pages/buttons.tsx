@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Buttons from "../components/organisms/buttons";
 import TabsContainer from "../components/organisms/tabs";
 import DropdownsList from "../components/organisms/dropdowns";
+import CopyExample from "../components/organisms/copy";
 
 const Button: NextPage = () => {
     return (
@@ -9,6 +10,7 @@ const Button: NextPage = () => {
             <Buttons/>
             <TabsContainer/>
             <DropdownsList/>
+            <CopyExample/>
         </div>
     );
 };
