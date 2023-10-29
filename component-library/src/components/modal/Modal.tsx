@@ -2,6 +2,9 @@ import React, { useRef } from "react";
 import { emptyFunc } from "../../utils/helpers";
 import {useOnClickOutside} from "../../utils/useOnClickOutside";
 import {CloseIcon} from "../../stories-utils/close";
+import "./styles.css";
+
+type AnimateTypes = "fadeIn" | "slideDown"
 
 export interface ModalProps{
     header?: React.ReactNode | string;
@@ -12,7 +15,8 @@ export interface ModalProps{
     className?: string;
     staticBackDrop?: boolean;
     footer?: React.ReactNode | string;
-    animate? : boolean
+    animate? : AnimateTypes | null,
+    modalDialogClassName?: string
 }
 
 export const Modal = ({
@@ -24,7 +28,8 @@ export const Modal = ({
                    staticBackDrop = true,
                    closeButton = true,
                    footer,
-                    animate = false
+                    animate = null,
+                          modalDialogClassName = "",
                }: ModalProps) => {
     const modalRef = useRef<HTMLDivElement>(null);
     useOnClickOutside(modalRef, onClose);
@@ -32,22 +37,26 @@ export const Modal = ({
     return show ? (
         <div>
             <div
-                className={`opacity-50 bg-black-full fixed top-0 right-0 z-10 left-0 w-full h-full`}
+                className={`${
+                    show ? "open" : "close"
+                } ${
+                    animate !== null ? "backDrop" : ""
+                } opacity-50 bg-[#000] fixed top-0 right-0 z-10 left-0 w-full h-full`}
             />
             <div
                 className={
                     `${
                         show ? "open" : "close"
                     } ${
-                        animate ? "modalAnimate" : ""
-                    } modal fade2 fixed top-0 right-0 left-0 w-full h-full z-20 overflow-auto ` + ` ${className}`
+                        animate !== null ? animate : ""
+                    } animate modal fade2 fixed top-0 right-0 left-0 w-full h-full z-20 overflow-auto ` + ` ${className}`
                 }
             >
                 <div
-                    className={`max-w-[500px] flex items-center min-h-full w-auto m-auto relative modalDialog`}
+                    className={`${modalDialogClassName} max-w-[500px] flex items-center min-h-full w-auto m-auto relative modalDialog`}
                 >
                     <div
-                        className={`bg-dropDown shadow-[#00000026] relative flex flex-col w-full rounded-lg text-light-mid modalContent`}
+                        className={`bg-black-200 shadow-[#00000026] relative flex flex-col w-full rounded-lg text-light-mid modalContent`}
                         ref={staticBackDrop ? null : modalRef}
                     >
                         {closeButton ? (
@@ -86,5 +95,3 @@ export const Modal = ({
         </div>
     ) : null;
 };
-
-export default Modal;
