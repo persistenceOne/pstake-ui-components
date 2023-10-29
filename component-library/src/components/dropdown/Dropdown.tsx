@@ -13,11 +13,9 @@ export type DropdownProps = {
     className?: string;
     rounded?: boolean;
     staticBackDrop?: boolean;
-    dropDownVariant: DropdownButtonVariants;
-    dropDownVariantBg?: string;
     dropDownContentClass?: string;
     dropDownButtonClass?: string;
-    dropDownIcon?: any;
+    dropDownIcon: React.ReactNode | null;
     closeDropdown?: boolean;
     closeHandler?: (closeDropdown: boolean) => void;
 } & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
@@ -30,8 +28,6 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
             className = "",
             rounded = false,
             staticBackDrop = true,
-            dropDownVariant = "primary",
-            dropDownVariantBg = "",
             dropdownType = "click",
             dropDownIcon = false,
             dropDownButtonClass = "",
@@ -57,15 +53,8 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
                 ref={staticBackDrop ? null : dropDownRef}
             >
                 <Button
-                    className={`${
-                        dropDownVariant !== "primary"
-                            ? dropDownVariantBg
-                                ? `${dropDownVariantBg}`
-                                : "bg-black-800 text-light-high"
-                            : ""
-                    } ${dropDownButtonClass} button w-full md:py-2 md:text-sm flex items-center
-            justify-center`}
-                    type="custom"
+                    className={`${dropDownButtonClass} bg-black-500 text-white-100 button w-full md:py-2 md:text-sm flex items-center justify-center`}
+                    type={"custom"}
                     size="medium"
                     content={
                         <>
@@ -86,7 +75,7 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
                     }}
                 />
                 <div
-                    className={`${dropDownContentClass} translate-y-0.5 dropDownContent min-w-full w-fit absolute opacity-0 transition-opacity transform ease duration-200 bg-dropDown left-0 right-0 ${
+                    className={`${dropDownContentClass} translate-y-0.5 dropDownContent min-w-full w-fit absolute opacity-0 transition-opacity transform ease duration-200 bg-black-500 left-0 right-0 ${
                         closeDropdown ? "visible translate-y-0 opacity-100" : "invisible"
                     } text-light-high rounded-md z-10`}
                 >
