@@ -63,13 +63,24 @@ const colors = {
         "700": "#0F3CAA",
     },
     transparent: "transparent",
+    body:'#030303',
 }
 
 export const tailwindConfigTheme =  {
     colors: {...colors},
     backgroundImage: {
-        "body-bg":
-            "radial-gradient(112.6% 112.6% at 50% -12.6%,#372627 0,#030303 44.79%)"
+        gradientLine:
+            "linear-gradient(270deg, #A6A6A6 0%, rgba(53, 53, 53, 0.51) 100%)",
+        atomBanner:
+            "url('/images/bg_images/atomBanner2.svg'), url('/images/bg_images/atomBanner1.svg') ",
+        Banner:
+            "url('/images/bg_images/binance_bg.svg'), radial-gradient(100% 311.1% at 97.81% 0,#fff 0,#fffef8 45.83%,#fffffd 100%)",
+        errorToastBg: "linear-gradient(136.45deg, #271818 -0.06%, #191519 100%)",
+        warningToastBg:
+            "linear-gradient(136.45deg, #18271B -0.06%, #191519 100%)",
+        successToastBg:
+            "linear-gradient(136.45deg, #18271B -0.06%, #191519 100%)",
+        infoToastBg: "linear-gradient(136.45deg, #1c1d1e -0.06%, #221f22 100%)",
     },
     backgroundColor: {
         ...colors,
@@ -104,50 +115,53 @@ export const tailwindConfigTheme =  {
         overline: ["0.625rem", { lineHeight: "1rem" }]
     },
     screens: {
-        "2xl": { max: "1536px" },
+        "2xl": { max: "1535px" },
         // => @media (max-width: 1536px) { ... }
-
-        "1.5xl": { max: "1408px" },
-        // => @media (max-width: 1408px) { ... }
-
-        xl: { max: "1280px" },
-        // => @media (max-width: 1280px) { ... }
-
-        "1.5lg": { max: "1152px" },
-        // => @media (max-width: 1152px) { ... }
-
-        lg: { max: "1024px" },
-        // => @media (max-width: 1024px) { ... }
-
-        "1.5md": { max: "896px" },
-        // => @media (max-width: 896px) { ... }
-
-        md: { max: "768px" },
-        // => @media (max-width: 768px) { ... }
-
-        "1.5xs": { max: "640px" },
-        // => @media (max-width: 640px) { ... }
-
-        // "1.5xs": { max: "512px" },
-        // // => @media (max-width: 512px) { ... }
-
-        sm: { max: "512px" }
+        "1.5xl": { max: "1407px" },
+        xl: { max: "1279px" },
+        "1.5lg": { max: "1151px" },
+        lg: { max: "1023px" },
+        "1.5md": { max: "895px" },
+        md: { max: "767px" },
+        "1.5xs": { max: "639px" },
+        sm: { max: "511px" },
     },
     extend: {
+        transitionProperty: {
+            height: "height",
+        },
         keyframes: {
-            'menu-open': {
-                '0%': {
-                    opacity: '0',
-                    transform: 'scale(0.9)',
+            "menu-open": {
+                "0%": {
+                    opacity: "0",
+                    transform: "scale(0.9)",
                 },
-                '100%': {
-                    opacity: '1',
-                    transform: 'scale(1)',
+                "100%": {
+                    opacity: "1",
+                    transform: "scale(1)",
                 },
             },
         },
         animation: {
-            'menu-open': 'menu-open 200ms ease-in-out',
+            "menu-open": "menu-open 200ms ease-in-out",
+        },
+        screens: {
+            "-2xl": { min: "1536px" },
+            // => @media (min-width: 1535px) { ... }
+            "-1.5xl": { min: "1408px" },
+            "-xl": { min: "1280px" },
+            "-1.5lg": { min: "1152px" },
+            "-lg": { min: "1024px" },
+            "-1.5md": { min: "896px" },
+            "-md": { min: "768px" },
+            "-1.5sm": { min: "640px" },
+            "-sm": { min: "512px" },
+        },
+        height: {
+            navbar: "89px",
+            "navbar-mobile": "72px",
+            content: "calc(100vh - 89px)",
+            "content-mobile": "calc(100vh - 72px)",
         },
     },
 }
