@@ -1,8 +1,8 @@
 {
   "name": "@persistenceone/pstake-ui-components",
-  "version": "0.0.6",
+  "version": "0.0.44",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/persistenceone"
+    "registry": "https://npm.pkg.github.com/persistenceone"
   },
   "description": "A React component library built with TailwindCSS and TypeScript.",
   "repository": "https://github.com/persistenceOne/pstake-ui-components.git",
@@ -48,6 +48,7 @@
     "tailwind": "tailwindcss -o src/build.css --minify",
     "rollup": "rollup -c",
     "build:lib": "npm run rollup",
+    "build-local:lib": "npm run tailwind && npm run rollup && cp src/build.css dist",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "predeploy": "yarn build-storybook",
@@ -73,6 +74,7 @@
     ]
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "prettier": "^2.8.3",
     "react": "^18.1.0",
     "react-copy-to-clipboard": "^5.1.0"

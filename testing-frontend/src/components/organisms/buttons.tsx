@@ -1,9 +1,10 @@
 import React from "react";
 import {Button, Copy} from "@persistenceone/pstake-ui-components";
-
+import { useWindowSize, truncateToFixedDecimalPlaces } from "@persistenceone/pstake-ui-components";
 
 const Buttons = () => {
-
+    const rest = truncateToFixedDecimalPlaces('123123123123')
+    console.log(rest, "rest")
     return <div>
         <p className={"text-white-200 text-xl mx-4 mb-6 border-b"}>Buttons</p>
         <div className={"flex items-center "}>

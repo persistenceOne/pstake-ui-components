@@ -44,3 +44,11 @@
 .modal.slideRight.open {
     animation: modalSlideRight 0.5s;
 }
+
+.buttonClose{
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    width: 1em;
+    height: 1em;
+}

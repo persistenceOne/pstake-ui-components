@@ -12,11 +12,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "@persistenceone/pstake-ui-components": "../component-library",
+    "@types/react-copy-to-clipboard": "^5.0.6",
     "next": "12.2.2",
     "next-seo": "^5.4.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "@persistenceone/pstake-ui-components": "../component-library"
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@testing-library/cypress": "^8.0.3",

@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {Button, Modal} from "@persistenceone/pstake-ui-components";
+import { Icon } from "../atoms/Icon";
 
 const ModalExample = () => {
     const [show, setShow] = useState<boolean>(false);
@@ -34,7 +35,7 @@ const ModalExample = () => {
                         className=""
                         modalDialogClassName={"!max-w-[600px]"}
                         staticBackDrop={false}
-                        closeButton={true}
+                        closeButton={<Icon viewClass="arrow-right fill-[#fff] !w-[10px]" iconName="close"/>}
                         animate={"fadeIn"}
                     >
                         <p>test</p>

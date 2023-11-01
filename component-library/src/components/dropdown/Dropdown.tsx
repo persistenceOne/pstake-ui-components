@@ -1,9 +1,10 @@
-import React, { forwardRef, useRef } from "react";
+import React, { useRef } from "react";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 import {useOnClickOutside} from "../../utils/useOnClickOutside";
 import {Button} from "../button";
+import "./styles.css";
 
-export type DropdownButtonVariants = "primary" | "custom";
+export type DropdownButtonSize = "large" | "medium" | "small";
 export type DropdownType = "hover" | "click";
 
 export type DropdownProps = {
@@ -15,12 +16,13 @@ export type DropdownProps = {
     staticBackDrop?: boolean;
     dropDownContentClass?: string;
     dropDownButtonClass?: string;
+    dropDownButtonSize?: DropdownButtonSize
     dropDownIcon: React.ReactNode | null;
     closeDropdown?: boolean;
     closeHandler?: (closeDropdown: boolean) => void;
 } & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
-export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
+export const Dropdown = (
     (
         {
             children,
@@ -29,13 +31,13 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
             rounded = false,
             staticBackDrop = true,
             dropdownType = "click",
-            dropDownIcon = false,
+            dropDownIcon = null,
             dropDownButtonClass = "",
             dropDownContentClass = "",
             closeDropdown = false,
-            closeHandler = () => {}
-        },
-        ref
+            closeHandler = () => {},
+            dropDownButtonSize="medium"
+        }: DropdownProps,
     ) => {
         const topRounding = rounded ? "rounded-t-md" : "";
 
@@ -53,13 +55,13 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
                 ref={staticBackDrop ? null : dropDownRef}
             >
                 <Button
-                    className={`${dropDownButtonClass} bg-black-500 text-white-100 button w-full md:py-2 md:text-sm flex items-center justify-center`}
+                    className={`${dropDownButtonClass} ${dropDownButtonSize} dropDownButton bg-black-500 text-white-100 button w-full md:py-2 md:text-sm flex items-center justify-center`}
                     type={"custom"}
-                    size="medium"
+                    size="auto"
                     content={
                         <>
                             {dropdownLabel}
-                            {dropDownIcon ? (
+                            {dropDownIcon !== null ? (
                                 <div className={`${
                                     !closeDropdown ? "rotate-360" : "rotate-360"
                                 } dropDownIcon mx-2 ease-in duration-200  rotate-90`}>
@@ -74,10 +76,11 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
                         closeHandler(!closeDropdown);
                     }}
                 />
+
                 <div
-                    className={`${dropDownContentClass} translate-y-0.5 dropDownContent min-w-full w-fit absolute opacity-0 transition-opacity transform ease duration-200 bg-black-500 left-0 right-0 ${
-                        closeDropdown ? "visible translate-y-0 opacity-100" : "invisible"
-                    } text-light-high rounded-md z-10`}
+                    className={`${dropDownContentClass} dropDownContent min-w-full w-fit absolute opacity-0 transition-opacity transform ease duration-200 bg-black-500 right-0 ${
+                        closeDropdown ? "visible translate-y-0.5 opacity-100" : "invisible"
+                    } text-white-100 rounded-md z-10`}
                 >
                     {children}
                 </div>
@@ -86,4 +89,3 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
     }
 );
 
-Dropdown.displayName = "Dropdown";

@@ -2,8 +2,9 @@ const tailwindConf = require("@persistenceone/pstake-ui-components");
 
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
+    "app/**/*.{js,ts,jsx,tsx}",
+    "src/**/*.{js,ts,jsx,tsx}",
+    "../../packages/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     colors: tailwindConf.tailwindConfigTheme.colors,

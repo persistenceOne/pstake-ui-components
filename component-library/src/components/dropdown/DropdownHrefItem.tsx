@@ -27,7 +27,7 @@ export const DropdownHrefItem = ({
       target={target}
     >
       {image ? image : null}
-      <span className="ml-4 text-light-high text-sm font-medium leading-normal md:text-xsm md:ml-2">
+      <span className="ml-4 text-white-100 text-sm font-medium leading-normal md:text-xsm md:ml-2">
         {optionName}
       </span>
     </a>

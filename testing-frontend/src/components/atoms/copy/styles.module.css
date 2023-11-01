@@ -1,15 +1,8 @@
 
 .copyResult{
-    top: -17px;
+    top: -15px;
     width: auto;
     right: -50%;
-    font-size: 10px;
-}
-
-.copyResult.customView{
-    top: -17px;
-    width: auto;
-    right: 50%;
     font-size: 10px;
 }
 
@@ -22,4 +15,9 @@
 .copyIcon {
     width: 16px;
     height: 16px;
+}
+
+.copyResult.customView{
+    width: auto;
+    right: 50%;
 }

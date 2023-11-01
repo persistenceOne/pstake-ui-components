@@ -1,5 +1,6 @@
 import React from "react";
-import {Button, Dropdown, Copy} from "@persistenceone/pstake-ui-components";
+import {Button, Dropdown} from "@persistenceone/pstake-ui-components";
+import {Copy} from "../atoms/copy";
 
 const CopyExample = () => {
     return (  <div>
@@ -11,8 +12,15 @@ const CopyExample = () => {
                         <Copy id={"test"}/>
                     </div>}
                     className={"mb-3 mr-8"} type={"primary"}/>
-            <div className="w-[100px] flex items-center">
+            <div className="w-[100px] flex items-center justify-center">
                 <Copy id={"test"}/>
+            </div>
+            <div className="w-[100px] flex items-center">
+                <Copy id={"test"} customView={<Button size={"small"}
+                                                      content={
+                                                          <p className={"mr-2 whitespace-nowrap"}>Test Copy</p>
+                                                      }
+                                                      className={"mb-3 mr-8"} type={"primary"}/>}/>
             </div>
         </div>
         </div>

@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { emptyFunc } from "../../utils/helpers";
 import {useOnClickOutside} from "../../utils/useOnClickOutside";
-import {CloseIcon} from "../../stories-utils/close";
 import "./styles.css";
 
 type AnimateTypes = "fadeIn" | "slideDown"
@@ -10,7 +9,7 @@ export interface ModalProps{
     header?: React.ReactNode | string;
     onClose?: () => void;
     children: React.ReactNode;
-    closeButton?: boolean;
+    closeButton?: any;
     show: boolean;
     className?: string;
     staticBackDrop?: boolean;
@@ -26,7 +25,7 @@ export const Modal = ({
                    onClose = emptyFunc,
                    className,
                    staticBackDrop = true,
-                   closeButton = true,
+                   closeButton = null,
                    footer,
                     animate = null,
                           modalDialogClassName = "",
@@ -56,21 +55,21 @@ export const Modal = ({
                     className={`${modalDialogClassName} max-w-[500px] flex items-center min-h-full w-auto m-auto relative modalDialog`}
                 >
                     <div
-                        className={`bg-black-200 shadow-[#00000026] relative flex flex-col w-full rounded-lg text-light-mid modalContent`}
+                        className={`bg-black-200 shadow-[#00000026] relative flex flex-col w-full rounded-lg text-white-300 modalContent`}
                         ref={staticBackDrop ? null : modalRef}
                     >
-                        {closeButton ? (
+                        {closeButton !==null ? (
                             <button
                                 type="button"
                                 onClick={onClose}
-                                className={`absolute top-[30px] right-[30px] h-4 w-4`}
+                                className={`buttonClose`}
                             >
-                                <CloseIcon />
+                                {closeButton}
                             </button>
                         ) : null}
                         {header ? (
                             <div
-                                className="modalHeader text-2xl text-light-high font-semibold
+                                className="modalHeader text-2xl text-white-100 font-semibold
                   flex justify-between md:text-lg items-start px-8 pt-8 md:px-6 md:pt-6 rounded-t dark:border-gray-600"
                             >
                                 <p>{header}</p>
@@ -81,7 +80,7 @@ export const Modal = ({
                         <div className="modalBody p-8 space-y-6 md:p-6">{children}</div>
                         {footer ? (
                             <div
-                                className="text-2xl text-light-high font-semibold
+                                className="text-2xl text-white-100 font-semibold
                   flex justify-between md:text-lg items-start px-8 pb-8 md:px-6 md:pt-6 rounded-t dark:border-gray-600 modalFooter"
                             >
                                 <p>{footer}</p>

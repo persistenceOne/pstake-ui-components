@@ -1,13 +1,14 @@
 import React from "react";
-import { forwardRef } from "../../utils/forwardRef";
 import "./styles.css";
 
 export type TabProps = {
   title: string;
+  id: string,
   disable?: boolean;
   children?: React.ReactNode | string;
+  customHandler?: () => void;
 };
 
-export const Tab = forwardRef<HTMLDivElement, TabProps>(({ children }) => {
+export const Tab = (({ children }: TabProps) => {
   return <div className="tabBody">{children}</div>;
 });

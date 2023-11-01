@@ -23,7 +23,7 @@ export const Copy = ({ id, customView = "" }: IconTypes) => {
           </span>
         )}
       </CopyToClipboard>
-      <section className={`copyResult absolute`}>
+      <section className={`${customView ? "customView" : "" } copyResult absolute`}>
         {copyValue ? <span>Copied</span> : null}
       </section>
     </span>
