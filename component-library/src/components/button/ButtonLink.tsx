@@ -16,7 +16,7 @@ export const ButtonLink = ({
             href={link}
             onClick={onClick}
             target={target}
-            className={`py-2.5 px-4 appButton ${type} ${size} ${className}`}
+            className={`py-2.5 px-4 appButton text-center box-border rounded-md flex items-center justify-center ${type} ${size} ${className}`}
         >
             {content}
         </a>

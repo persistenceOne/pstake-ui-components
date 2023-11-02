@@ -1,14 +1,64 @@
-# component-library
+# pstake-ui-components
 
-### Initial publish steps
- 1. Update name - @username/repo_name, registry url - https://registry.npmjs.org/GITHUB_ORG in package.json
- 2. Create .npmrc file in home directory.  ex: nano .npmrcz
- 3. Add below code and save it
-    ```bash
-        registry=https://registry.npmjs.org/
-        @YOUR_GITHUB_USERNAME:registry=https://npm.pkg.github.com/
-        npm.pkg.github.com/:_authToken=YOUR_GITHUB_AUTH_TOKEN // you can find in settings>developer settings> token
- 
- 4. run - npm publish
- 5. Update package.json version whenever publishing new changes.
-    
+[![npm (tag)](https://img.shields.io/npm/v/@persistenceone/pstake-ui-components)](https://www.npmjs.com/package/@persistenceone/pstake-ui-components)
+![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/persistenceOne/pstake-ui-components)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+
+UI Components and utility library for pSTAKE App.
+
+#### npm
+
+```shell
+npm i @persistenceone/pstake-ui-components
+```
+
+### Available Components
+
+```ts
+import {
+    Button, 
+    ButtonLink, // to redirct from button
+    Dropdown,
+    Input, 
+    Modal, 
+    Switch,
+    Tabs,
+    Spinner,
+} from "@persistenceone/pstake-ui-components";
+```
+
+### Available Hooks
+
+```ts
+import {
+    useLocalStorage, 
+    useWindowSize,
+    useOnClickOutside,
+} from "@persistenceone/pstake-ui-components";
+```
+
+### Available helper functions
+
+```ts
+import {
+    formatNumber,
+    stringTruncate,
+    truncateToFixedDecimalPlaces,
+    numberFormat,
+    getTokenImgFromDenom,
+    minifiyTxnHash,
+    getActiveSideBarItem,
+    getChainSpecificAssets,
+    getPercentChange
+} from "@persistenceone/pstake-ui-components";
+```
+### TailwindCSS Config
+
+```tsconst tailwindConf = require("@persistenceone/pstake-ui-components");
+module.exports = {
+    content: [
+    ...
+    "./node_modules/@persistenceone/pstake-ui-components/**/*.{js,ts,jsx,tsx,mdx}",
+    ],
+}
+```
