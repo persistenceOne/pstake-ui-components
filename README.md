@@ -9,7 +9,7 @@ UI Components and utility library for pSTAKE App.
 #### npm
 
 ```shell
-npm i @persistenceone/pstake-ui-components
+npm i @persistenceone/pstake-ui-components1
 ```
 
 ### Available Components
