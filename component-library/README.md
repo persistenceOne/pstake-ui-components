@@ -12,7 +12,7 @@ UI Components and utility library for pSTAKE App.
 npm i @persistenceone/pstake-ui-components
 ```
 
-### Available Components1
+### Available Components
 
 ```ts
 import {
