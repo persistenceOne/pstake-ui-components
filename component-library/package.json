@@ -1,15 +1,14 @@
 {
   "name": "@persistenceone/pstake-ui-components",
-  "version": "0.0.44",
+  "version": "0.0.55",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/persistenceone"
+    "registry": "https://registry.npmjs.com/"
   },
   "description": "A React component library built with TailwindCSS and TypeScript.",
   "repository": "https://github.com/persistenceOne/pstake-ui-components.git",
   "homepage": "https://github.com/persistenceOne/pstake-ui-components",
   "author": "pSTAKE Finance <pstake@persistence.one>",
   "license": "MIT",
-  "private": false,
   "peerDependencies": {
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
@@ -48,7 +47,7 @@
     "tailwind": "tailwindcss -o src/build.css --minify",
     "rollup": "rollup -c",
     "build:lib": "npm run rollup",
-    "build-local:lib": "npm run tailwind && npm run rollup && cp src/build.css dist",
+    "build-local:lib": "npm run tailwind && npm run rollup",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "predeploy": "yarn build-storybook",
@@ -74,8 +73,9 @@
     ]
   },
   "dependencies": {
+    "eslint-config-prettier": "^9.0.0",
     "lodash": "^4.17.21",
-    "prettier": "^2.8.3",
+    "prettier": "^2.8.8",
     "react": "^18.1.0",
     "react-copy-to-clipboard": "^5.1.0"
   }

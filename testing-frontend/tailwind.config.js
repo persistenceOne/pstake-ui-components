@@ -5,6 +5,7 @@ module.exports = {
     "app/**/*.{js,ts,jsx,tsx}",
     "src/**/*.{js,ts,jsx,tsx}",
     "../../packages/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@persistenceone/pstake-ui-components/src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     colors: tailwindConf.tailwindConfigTheme.colors,
