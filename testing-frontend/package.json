@@ -14,7 +14,7 @@
   "dependencies": {
     "@persistenceone/pstake-ui-components": "^0.0.46",
     "@types/react-copy-to-clipboard": "^5.0.6",
-    "next": "12.2.2",
+    "next": "13.5.0",
     "next-seo": "^5.4.0",
     "react": "18.2.0",
     "react-copy-to-clipboard": "^5.1.0",
