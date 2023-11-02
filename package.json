@@ -1,6 +1,6 @@
 {
   "name": "@persistenceone/pstake-ui-components",
-  "version": "0.0.55",
+  "version": "0.0.56",
   "publishConfig": {
     "registry": "https://registry.npmjs.com/"
   },
@@ -46,7 +46,7 @@
   "scripts": {
     "tailwind": "tailwindcss -o src/build.css --minify",
     "rollup": "rollup -c",
-    "build:lib": "npm run rollup",
+    "build": "npm run rollup",
     "build-local:lib": "npm run tailwind && npm run rollup",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
