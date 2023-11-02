@@ -1,9 +1,8 @@
 name: Publish
 
 on:
-  pull_request:
-    branches: [ main ]
-    types: [ opened, reopened ]
+  release:
+    types: [published]
 
 jobs:
   deploy:
