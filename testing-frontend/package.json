@@ -12,7 +12,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@persistenceone/pstake-ui-components": "../component-library",
+    "@persistenceone/pstake-ui-components": "^0.0.46",
     "@types/react-copy-to-clipboard": "^5.0.6",
     "next": "12.2.2",
     "next-seo": "^5.4.0",
