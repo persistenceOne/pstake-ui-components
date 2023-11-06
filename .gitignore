@@ -4,3 +4,7 @@ dist
 .sass-cache
 #IDE folder
 .idea
+
+# next.js
+/.next/
+/out/
