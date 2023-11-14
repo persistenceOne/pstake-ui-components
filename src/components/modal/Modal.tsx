@@ -40,7 +40,7 @@ export const Modal = ({
                     show ? "open" : "close"
                 } ${
                     animate !== null ? "backDrop" : ""
-                } opacity-50 bg-[#000] fixed top-0 right-0 z-10 left-0 w-full h-full`}
+                } bg-[#00000099] backdrop-blur-sm fixed top-0 right-0 z-10 left-0 w-full h-full`}
             />
             <div
                 className={
@@ -55,7 +55,7 @@ export const Modal = ({
                     className={`${modalDialogClassName} max-w-[500px] flex items-center min-h-full w-auto m-auto relative modalDialog`}
                 >
                     <div
-                        className={`bg-black-200 shadow-[#00000026] relative flex flex-col w-full rounded-lg text-white-300 modalContent`}
+                        className={`bg-black-500 relative flex flex-col w-full rounded-lg text-white-300 modalContent`}
                         ref={staticBackDrop ? null : modalRef}
                     >
                         {closeButton !==null ? (

@@ -238,8 +238,12 @@ export const getActiveSideBarItem = (route: string, path: string) => {
         return path.includes("/defi");
     } else if (route === "/bridge") {
         return path.includes("/bridge");
+    }else if (route === "/dashboard") {
+        return path.includes("/dashboard");
+    } else if (route === "/assets") {
+        return path.includes("/assets");
     } else {
-        return !path.includes("/defi") && !path.includes("/bridge");
+        return !path.includes("/defi") && !path.includes("/bridge") && !path.includes("/dashboard") && !path.includes("/assets");
     }
 };
 

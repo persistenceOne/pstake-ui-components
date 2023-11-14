@@ -9,7 +9,6 @@ export type TabsProps = {
 
 export const Tabs = (
   ({ children, className, tabHeaderClass }:TabsProps ) => {
-      console.log(children,"children")
     const [selectedTab, setSelectedTab] = useState(0);
     return (
       <div className={`tabs ${className}`}>
