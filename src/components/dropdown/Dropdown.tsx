@@ -20,6 +20,7 @@ export type DropdownProps = {
     dropDownIcon: React.ReactNode | null;
     closeDropdown?: boolean;
     closeHandler?: (closeDropdown: boolean) => void;
+    animate?:boolean;
 } & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 export const Dropdown = (
@@ -36,7 +37,8 @@ export const Dropdown = (
             dropDownContentClass = "",
             closeDropdown = false,
             closeHandler = () => {},
-            dropDownButtonSize="medium"
+            dropDownButtonSize="medium",
+            animate=true
         }: DropdownProps,
     ) => {
         const topRounding = rounded ? "rounded-t-md" : "";
@@ -79,7 +81,7 @@ export const Dropdown = (
 
                 <div
                     className={`${dropDownContentClass} dropDownContent min-w-full w-fit absolute opacity-0 transition-opacity transform ease duration-200 bg-black-500 right-0 ${
-                        closeDropdown ? "visible translate-y-0.5 opacity-100" : "invisible"
+                        closeDropdown ? `${animate ? "visible" : "block"} translate-y-0.5 opacity-100` : `${animate ? "invisible" : "hidden"}`
                     } text-white-100 rounded-md z-10`}
                 >
                     {children}

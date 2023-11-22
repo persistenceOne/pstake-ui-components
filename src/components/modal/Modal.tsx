@@ -72,12 +72,12 @@ export const Modal = ({
                                 className="modalHeader text-2xl text-white-100 font-semibold
                   flex justify-between md:text-lg items-start px-8 pt-8 md:px-6 md:pt-6 rounded-t dark:border-gray-600"
                             >
-                                <p>{header}</p>
+                                {header}
                             </div>
                         ) : (
                             ""
                         )}
-                        <div className="modalBody p-8 space-y-6 md:p-6">{children}</div>
+                        <div className="modalBody p-8 md:p-6">{children}</div>
                         {footer ? (
                             <div
                                 className="text-2xl text-white-100 font-semibold

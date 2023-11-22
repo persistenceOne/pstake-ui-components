@@ -138,13 +138,13 @@ export const getTokenImgFromDenom = (denom: string) => {
             return {
                 denom: "ATOM",
                 chain: "persistence",
-                tokenImg: "/images/logos/ibc_atom.svg",
+                tokenImg: "/images/logos/atom.svg",
             };
         case "ibc/5A41832B26BF318D052563EFFE677C1DE11DF8CE104F00204860F3E3439818B2":
             return {
                 denom: "OSMO",
                 chain: "persistence",
-                tokenImg: "/images/logos/ibc_osmosis.svg",
+                tokenImg: "/images/logos/osmosis.svg",
             };
         case "stk/uatom":
             return {
@@ -217,6 +217,48 @@ export const getTokenImgFromDenom = (denom: string) => {
                 denom: "WETH",
                 chain: "optimism",
                 tokenImg: "/images/logos/eth_optimism.svg",
+            };
+        case "adydx":
+            return {
+                denom: "DYDX",
+                chain: "persistence",
+                tokenImg: "/images/logos/dydx.svg",
+            };
+        case "stk/adydx":
+            return {
+                denom: "stkTYTX",
+                chain: "persistence",
+                tokenImg: "/images/logos/stk_dydx.svg",
+            };
+        case "atytx":
+            return {
+                denom: "TYTX",
+                chain: "persistence",
+                tokenImg: "/images/logos/dydx.svg",
+            };
+        case "stk/atytx":
+            return {
+                denom: "stkTYTX",
+                chain: "persistence",
+                tokenImg: "/images/logos/stk_dydx.svg",
+            };
+        case "ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9": // testnet asset
+            return {
+                denom: "ATOM",
+                chain: "persistence",
+                tokenImg: "/images/logos/atom.svg",
+            };
+        case "ibc/6AE2756AA7EAA8FA06E11472EA05CA681BD8D3FBC1AAA9F06C79D1EC1C90DC9B": // testnet asset
+            return {
+                denom: "OSMO",
+                chain: "persistence",
+                tokenImg: "/images/logos/osmosis.svg",
+            };
+        case "ibc/008E65368CDAC4AEDDAEB41FAD053F9B6B37BD8FA15AD9FC922497F3D8450363": // testnet asset
+            return {
+                denom: "TYTX",
+                chain: "persistence",
+                tokenImg: "/images/logos/dydx.svg",
             };
         default:
             return {

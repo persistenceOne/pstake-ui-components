@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useEffect, useState} from "react";
 
 function getDefaultSorting(defaultTableData: any, columns: any) {
   const sorted = [...defaultTableData].sort((a, b) => {
@@ -29,6 +29,10 @@ export const useSortableTable = (data: any, columns: any): any => {
   const [tableData, setTableData] = useState<any[]>(
     getDefaultSorting(data, columns)
   );
+
+  useEffect(()=>{
+    setTableData(getDefaultSorting(data, columns))
+  },[data, columns])
 
   const handleSorting = (sortField: any, sortOrder: any) => {
     if (sortField) {
