@@ -15,7 +15,9 @@ export interface ModalProps{
     staticBackDrop?: boolean;
     footer?: React.ReactNode | string;
     animate? : AnimateTypes | null,
-    modalDialogClassName?: string
+    modalDialogClassName?: string,
+    modalHeaderClassName?:string
+    modalBodyClassName?: string,
 }
 
 export const Modal = ({
@@ -29,6 +31,8 @@ export const Modal = ({
                    footer,
                     animate = null,
                           modalDialogClassName = "",
+                          modalHeaderClassName = "",
+                          modalBodyClassName = ""
                }: ModalProps) => {
     const modalRef = useRef<HTMLDivElement>(null);
     useOnClickOutside(modalRef, onClose);
@@ -69,15 +73,15 @@ export const Modal = ({
                         ) : null}
                         {header ? (
                             <div
-                                className="modalHeader text-2xl text-white-100 font-semibold
-                  flex justify-between md:text-lg items-start px-8 pt-8 md:px-6 md:pt-6 rounded-t dark:border-gray-600"
+                                className={`modalHeader text-2xl text-white-100 font-semibold
+                  flex justify-between md:text-lg items-start px-8 pt-8 md:px-6 md:pt-6 rounded-t dark:border-gray-600 ${modalHeaderClassName}`}
                             >
                                 {header}
                             </div>
                         ) : (
                             ""
                         )}
-                        <div className="modalBody p-8 md:p-6">{children}</div>
+                        <div className={`modalBody p-8 md:p-6 ${modalBodyClassName}`}>{children}</div>
                         {footer ? (
                             <div
                                 className="text-2xl text-white-100 font-semibold

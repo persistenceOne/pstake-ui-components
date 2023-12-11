@@ -8,4 +8,5 @@ export interface InputTextTypes extends React.ComponentProps<"input"> {
   type: string;
   value?: string;
   disable?: boolean;
+  title? : string
 }

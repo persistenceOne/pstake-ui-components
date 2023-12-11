@@ -114,157 +114,224 @@ export const getTokenImgFromDenom = (denom: string) => {
             return {
                 denom: "XPRT",
                 chain: "persistence",
-                tokenImg: "/images/logos/xprt_logo.svg",
+                tokenImg: "/images/tokens/xprt.svg",
+                minimalDenom: "uxprt",
+                decimals: 6
             };
         case "uatom":
             return {
                 denom: "ATOM",
                 chain: "cosmos",
-                tokenImg: "/images/logos/atom.svg",
+                tokenImg: "/images/tokens/atom.svg",
+                minimalDenom: "uatom",
+                decimals: 6
             };
-        case "ibc/A6E3AF63B3C906416A9AF7A556C59EA4BD50E617EFFE6299B99700CCB780E444":
-            return {
-                denom: "PSTAKE",
-                chain: "persistence",
-                tokenImg: "/images/logos/pstake.png",
-            };
-        case "uosmo":
-            return {
-                denom: "OSMO",
-                chain: "osmosis",
-                tokenImg: "/images/logos/osmosis.svg",
-            };
-        case "ibc/4A17832B26BF318D052563EFFE677C1DE11DF8CE104F00204860F3E3439818B2":
+        case "ibc/C8A74ABBE2AF892E15680D916A7C22130585CE5704F9B17A10F184A90D53BECA": // mainnet asset
             return {
                 denom: "ATOM",
                 chain: "persistence",
-                tokenImg: "/images/logos/atom.svg",
-            };
-        case "ibc/5A41832B26BF318D052563EFFE677C1DE11DF8CE104F00204860F3E3439818B2":
-            return {
-                denom: "OSMO",
-                chain: "persistence",
-                tokenImg: "/images/logos/osmosis.svg",
-            };
-        case "stk/uatom":
-            return {
-                denom: "stkATOM",
-                chain: "persistence",
-                tokenImg: "/images/logos/stk_atom.svg",
-            };
-        case "stk/uosmo":
-            return {
-                denom: "stkOSMO",
-                chain: "persistence",
-                tokenImg: "/images/logos/stk_osmo.svg",
-            };
-        case "stk/uxprt":
-            return {
-                denom: "stkXPRT",
-                chain: "persistence",
-                tokenImg: "/images/logos/stk_xprt.svg",
-            };
-        case "eth/ethereum":
-            return {
-                denom: "ETH",
-                chain: "ethereum",
-                tokenImg: "/images/logos/eth.svg",
-            };
-        case "stkETH/ethereum":
-            return {
-                denom: "stkETH",
-                chain: "optimism",
-                tokenImg: "/images/logos/stk_eth.svg",
-            };
-        case "eth/optimism":
-            return {
-                denom: "ETH",
-                chain: "optimism",
-                tokenImg: "/images/logos/eth_optimism.svg",
-            };
-        case "stkETH/optimism":
-            return {
-                denom: "stkETH",
-                chain: "optimism",
-                tokenImg: "/images/logos/stketh_optimism.svg",
-            };
-        case "eth/arbitrum":
-            return {
-                denom: "ETH",
-                chain: "arbitrum",
-                tokenImg: "/images/logos/arbitrum.svg",
-            };
-        case "stkETH/arbitrum":
-            return {
-                denom: "stkETH",
-                chain: "arbitrum",
-                tokenImg: "/images/logos/stketh_arbitrum.svg",
-            };
-        case "weth/ethereum":
-            return {
-                denom: "WETH",
-                chain: "ethereum",
-                tokenImg: "/images/logos/eth.svg",
-            };
-        case "weth/arbitrum":
-            return {
-                denom: "WETH",
-                chain: "arbitrum",
-                tokenImg: "/images/logos/arbitrum.svg",
-            };
-        case "weth/optimism":
-            return {
-                denom: "WETH",
-                chain: "optimism",
-                tokenImg: "/images/logos/eth_optimism.svg",
-            };
-        case "adydx":
-            return {
-                denom: "DYDX",
-                chain: "persistence",
-                tokenImg: "/images/logos/dydx.svg",
-            };
-        case "stk/adydx":
-            return {
-                denom: "stkTYTX",
-                chain: "persistence",
-                tokenImg: "/images/logos/stk_dydx.svg",
-            };
-        case "atytx":
-            return {
-                denom: "TYTX",
-                chain: "persistence",
-                tokenImg: "/images/logos/dydx.svg",
-            };
-        case "stk/atytx":
-            return {
-                denom: "stkTYTX",
-                chain: "persistence",
-                tokenImg: "/images/logos/stk_dydx.svg",
+                tokenImg: "/images/tokens/atom.svg",
+                minimalDenom: "uatom",
+                decimals: 6
             };
         case "ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9": // testnet asset
             return {
                 denom: "ATOM",
                 chain: "persistence",
-                tokenImg: "/images/logos/atom.svg",
+                tokenImg: "/images/tokens/atom.svg",
+                minimalDenom: "uatom",
+                decimals: 6
+            };
+        case "ibc/A6E3AF63B3C906416A9AF7A556C59EA4BD50E617EFFE6299B99700CCB780E444":
+            return {
+                denom: "PSTAKE",
+                chain: "persistence",
+                tokenImg: "/images/tokens/pstake.png",
+                minimalDenom: "pstake",
+                decimals: 18
+            };
+        case "uosmo":
+            return {
+                denom: "OSMO",
+                chain: "osmosis",
+                tokenImg: "/images/tokens/osmo.svg",
+                minimalDenom: "uosmo",
+                decimals: 6
+            };
+        case "ibc/4A17832B26BF318D052563EFFE677C1DE11DF8CE104F00204860F3E3439818B2":
+            return {
+                denom: "ATOM",
+                chain: "persistence",
+                tokenImg: "/images/tokens/atom.svg",
+                minimalDenom: "uatom",
+                decimals: 6
+            };
+        case "ibc/5A41832B26BF318D052563EFFE677C1DE11DF8CE104F00204860F3E3439818B2":
+            return {
+                denom: "OSMO",
+                chain: "persistence",
+                tokenImg: "/images/tokens/osmo.svg",
+                minimalDenom: "uosmo",
+                decimals: 6
+            };
+        case "ibc/646315E3B0461F5FA4C5C8968A88FC45D4D5D04A45B98F1B8294DD82F386DD85":
+            return {
+                denom: "OSMO",
+                chain: "persistence",
+                tokenImg: "/images/tokens/osmo.svg",
+                minimalDenom: "uosmo",
+                decimals: 6
+            };
+        case "stk/uatom":
+            return {
+                denom: "stkATOM",
+                chain: "persistence",
+                tokenImg: "/images/tokens/stk_atom.svg",
+                minimalDenom: "stk/uatom",
+                decimals: 6
+            };
+        case "stk/uosmo":
+            return {
+                denom: "stkOSMO",
+                chain: "persistence",
+                tokenImg: "/images/tokens/stk_osmo.svg",
+                minimalDenom: "stk/uosmo",
+                decimals: 6
+            };
+        case "stk/uxprt":
+            return {
+                denom: "stkXPRT",
+                chain: "persistence",
+                tokenImg: "/images/tokens/stk_xprt.svg",
+                minimalDenom: "stk/uxprt",
+                decimals: 6
+            };
+        case "eth/ethereum":
+            return {
+                denom: "ETH",
+                chain: "ethereum",
+                tokenImg: "/images/tokens/eth.svg",
+                minimalDenom: "eth",
+                decimals: 18
+            };
+        case "stkETH/ethereum":
+            return {
+                denom: "stkETH",
+                chain: "optimism",
+                tokenImg: "/images/tokens/stk_eth.svg",
+                minimalDenom: "stkETH",
+                decimals: 18
+            };
+        case "eth/optimism":
+            return {
+                denom: "ETH",
+                chain: "optimism",
+                tokenImg: "/images/tokens/eth_optimism.svg",
+                minimalDenom: "eth",
+                decimals: 18
+            };
+        case "stkETH/optimism":
+            return {
+                denom: "stkETH",
+                chain: "optimism",
+                tokenImg: "/images/tokens/stketh_optimism.svg",
+                minimalDenom: "stkETH",
+                decimals: 18
+            };
+        case "eth/arbitrum":
+            return {
+                denom: "ETH",
+                chain: "arbitrum",
+                tokenImg: "/images/tokens/arbitrum.svg",
+                minimalDenom: "eth",
+                decimals: 18
+            };
+        case "stkETH/arbitrum":
+            return {
+                denom: "stkETH",
+                chain: "arbitrum",
+                tokenImg: "/images/tokens/stketh_arbitrum.svg",
+                minimalDenom: "stkETH",
+                decimals: 18
+            };
+        case "weth/ethereum":
+            return {
+                denom: "WETH",
+                chain: "ethereum",
+                tokenImg: "/images/tokens/eth.svg",
+                minimalDenom: "weth",
+                decimals: 18
+            };
+        case "weth/arbitrum":
+            return {
+                denom: "WETH",
+                chain: "arbitrum",
+                tokenImg: "/images/tokens/arbitrum.svg",
+                minimalDenom: "weth",
+                decimals: 18
+            };
+        case "weth/optimism":
+            return {
+                denom: "WETH",
+                chain: "optimism",
+                tokenImg: "/images/tokens/eth_optimism.svg",
+                minimalDenom: "weth",
+                decimals: 18
+            };
+        case "adydx":
+            return {
+                denom: "DYDX",
+                chain: "persistence",
+                tokenImg: "/images/tokens/dydx.svg",
+                minimalDenom: "adydx",
+                decimals: 18
+            };
+        case "stk/adydx":
+            return {
+                denom: "stkDYDX",
+                chain: "persistence",
+                tokenImg: "/images/tokens/stk_dydx.svg",
+                minimalDenom: "stk/adydx",
+                decimals: 18
+            };
+        case "atytx":
+            return {
+                denom: "TYTX",
+                chain: "persistence",
+                tokenImg: "/images/tokens/dydx.svg",
+                minimalDenom: "atytx",
+                decimals: 18
+            };
+        case "stk/atytx":
+            return {
+                denom: "stkTYTX",
+                chain: "persistence",
+                tokenImg: "/images/tokens/stk_dydx.svg",
+                minimalDenom: "stk/atytx",
+                decimals: 18
             };
         case "ibc/6AE2756AA7EAA8FA06E11472EA05CA681BD8D3FBC1AAA9F06C79D1EC1C90DC9B": // testnet asset
             return {
                 denom: "OSMO",
                 chain: "persistence",
-                tokenImg: "/images/logos/osmosis.svg",
+                tokenImg: "/images/tokens/osmo.svg",
+                minimalDenom: "uosmo",
+                decimals: 6
             };
         case "ibc/008E65368CDAC4AEDDAEB41FAD053F9B6B37BD8FA15AD9FC922497F3D8450363": // testnet asset
             return {
                 denom: "TYTX",
                 chain: "persistence",
-                tokenImg: "/images/logos/dydx.svg",
+                tokenImg: "/images/tokens/dydx.svg",
+                minimalDenom: "atytx",
+                decimals: 18
             };
         default:
             return {
                 denom: "Unknown",
                 chain: "persistence",
-                tokenImg: "/images/logos/ibc.svg",
+                tokenImg: "/images/tokens/ibc.svg",
+                decimals: 0
             };
     }
 };
