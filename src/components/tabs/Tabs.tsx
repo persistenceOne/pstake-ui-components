@@ -8,18 +8,20 @@ export type TabsProps = {
     className?: string;
     tabHeaderClass?: string;
     activeTab: StakeTabTypes;
+    tabType?: "bordered" | "normal"
 };
 
 export const Tabs = ({
                          children,
                          className,
                          tabHeaderClass,
-                         activeTab
+                         activeTab,
+                         tabType = "normal"
                      }: TabsProps) => {
     return (
         <div className={`tabs ${className}`}>
             <div
-                className={`tabsHeader flex text-center flex-wrap ${tabHeaderClass}`}
+                className={`tabsHeader flex text-center flex-wrap ${tabType} ${tabHeaderClass}`}
             >
                 {children!.map((item, index) =>
                     item !== null ? (
@@ -30,6 +32,7 @@ export const Tabs = ({
                             index={index}
                             selectedTab={activeTab}
                             id={item.props.id}
+                            type={tabType}
                             customHandler={item.props.customHandler}
                         />
                     ) : null

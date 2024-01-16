@@ -1,6 +1,6 @@
 {
   "name": "@persistenceone/pstake-ui-components",
-  "version": "0.1.53",
+  "version": "0.1.67",
   "publishConfig": {
     "registry": "https://registry.npmjs.com/"
   },

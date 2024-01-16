@@ -278,20 +278,28 @@ export const getTokenImgFromDenom = (denom: string) => {
                 minimalDenom: "weth",
                 decimals: 18
             };
-        case "adydx":
+        case "adv4tnt":
             return {
-                denom: "DYDX",
+                denom: "DV4TNT",
                 chain: "persistence",
                 tokenImg: "/images/tokens/dydx.svg",
-                minimalDenom: "adydx",
+                minimalDenom: "adv4tnt",
                 decimals: 18
             };
-        case "stk/adydx":
+        case "stk/adv4tnt":
             return {
-                denom: "stkDYDX",
+                denom: "stkDV4TNT",
                 chain: "persistence",
                 tokenImg: "/images/tokens/stk_dydx.svg",
-                minimalDenom: "stk/adydx",
+                minimalDenom: "stk/adv4tnt",
+                decimals: 18
+            };
+        case "ibc/18200EAA7E5BB3D235FF517F04045F4DCB0691CE6FC1B32E4297BEA8EF7710E3": // testnet-asset
+            return {
+                denom: "DV4TNT",
+                chain: "persistence",
+                tokenImg: "/images/tokens/dydx.svg",
+                minimalDenom: "adv4tnt",
                 decimals: 18
             };
         case "atytx":

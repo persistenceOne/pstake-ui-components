@@ -1,18 +1,27 @@
 /* tabs */
-.tabsHeader .tabTitle:first-child {
+.tabsHeader.normal .tabTitle:first-child {
     border-radius: 0.375rem 0 0 0.375rem;
 }
 
-.tabsHeader .tabTitle:not(:first-child) {
+.tabsHeader.normal .tabTitle:not(:first-child) {
     border-left: 1px solid;
     @apply border-black-100;
 }
 
-.tabsHeader .tabTitle:last-child {
+.tabsHeader.normal .tabTitle:last-child {
     border-radius: 0 0.375rem 0.375rem 0;
 }
 
-.tabTitle.active {
+.tabsHeader.normal .tabTitle.active {
     @apply bg-white-200;
     @apply text-black-500;
+}
+
+.tabsHeader.bordered {
+    border-bottom: 3px solid #2C2C2F;
+}
+
+.tabsHeader.bordered .tabTitle.active {
+    border-bottom: 3px solid #E50913;
+    margin-bottom: -3px;
 }
