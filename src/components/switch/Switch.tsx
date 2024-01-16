@@ -18,12 +18,12 @@ export const Switch = ({
                 onChange={onChange}
             />
             <div
-                className={`${size} switch bg-transparent border-[1.5px] !border-[#fcfcfc] peer-focus:outline-none rounded-full
-       peer peer-checked:after:translate-x-full peer-checked:after:border-[1.5px] peer-checked:after:border-[#fcfcfc] peer-checked:after:-left-[1px]  after:content-[''] after:absolute
-        after:top-[1px] after:left-[0px] after:bg-black-700 after:border-[#fcfcfc] after:border-[1.5px] after:rounded-full
-         after:transition-all peer-checked:bg-[#FCFCFC] peer-checked:after:bg-[#282828]`}
+                className={`${size} switch peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full
+         rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[1px] after:left-[1px]
+         after:rounded-full after:transition-all bg-[#383838] after:bg-[#EBEBEB] after:border-[#383838] after:border-[1.5px]
+         peer-checked:bg-[#8C0208] peer-checked:after:bg-[#EBEBEB] peer-checked:after:border-[#8C0208]  peer-checked:after:-left-[1px]`}
             ></div>
         </div>
-        <span className="ml-2 text-sm text-white-100"> {labelText}</span>
+        <span className="ml-2 text-sm text-white-100 md:text-xsm"> {labelText}</span>
     </label>
 );

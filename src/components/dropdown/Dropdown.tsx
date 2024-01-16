@@ -20,6 +20,7 @@ export type DropdownProps = {
     dropDownIcon: React.ReactNode | null;
     closeDropdown?: boolean;
     closeHandler?: (closeDropdown: boolean) => void;
+    animate?:boolean;
 } & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 export const Dropdown = (
@@ -36,7 +37,8 @@ export const Dropdown = (
             dropDownContentClass = "",
             closeDropdown = false,
             closeHandler = () => {},
-            dropDownButtonSize="medium"
+            dropDownButtonSize="medium",
+            animate=true
         }: DropdownProps,
     ) => {
         const topRounding = rounded ? "rounded-t-md" : "";
@@ -49,13 +51,13 @@ export const Dropdown = (
 
         return (
             <div
-                className={`${topRounding} ${className} text-white relative inline-block dropDown ${
+                className={`${topRounding} ${className}  text-white relative inline-block dropDown ${
                     dropdownType === "click" ? "dropDownClick" : "dropDownHover group"
                 }`}
                 ref={staticBackDrop ? null : dropDownRef}
             >
                 <Button
-                    className={`${dropDownButtonClass} ${dropDownButtonSize} dropDownButton bg-black-500 text-white-100 button w-full md:py-2 md:text-sm flex items-center justify-center`}
+                    className={`${dropDownButtonClass} ${dropDownButtonSize} ${!closeDropdown ? "closed" : "opened"} dropDownButton bg-black-500 text-white-100 button w-full md:py-2 md:text-sm flex items-center justify-center`}
                     type={"custom"}
                     size="auto"
                     content={
@@ -63,8 +65,8 @@ export const Dropdown = (
                             {dropdownLabel}
                             {dropDownIcon !== null ? (
                                 <div className={`${
-                                    !closeDropdown ? "rotate-360" : "rotate-360"
-                                } dropDownIcon mx-2 ease-in duration-200  rotate-90`}>
+                                    !closeDropdown ? "rotate-90" : "-rotate-90"
+                                } dropDownIcon mx-2 ease-in duration-200`}>
                                     {dropDownIcon}
                                 </div>
                             ) : (
@@ -79,7 +81,7 @@ export const Dropdown = (
 
                 <div
                     className={`${dropDownContentClass} dropDownContent min-w-full w-fit absolute opacity-0 transition-opacity transform ease duration-200 bg-black-500 right-0 ${
-                        closeDropdown ? "visible translate-y-0.5 opacity-100" : "invisible"
+                        closeDropdown ? `${animate ? "visible" : "block"} translate-y-[4px] opacity-100` : `${animate ? "invisible" : "hidden"}`
                     } text-white-100 rounded-md z-10`}
                 >
                     {children}

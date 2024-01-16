@@ -13,10 +13,12 @@ export const InputText = ({
                               value,
                               onChange = emptyFunc,
                               disable = false,
+                              title = ""
                           }: InputTextTypes) => {
     return (
         <div className="flex flex-1 justify-end">
             <input
+                title={title}
                 type={type}
                 className={className}
                 name={name}
@@ -26,6 +28,7 @@ export const InputText = ({
                 onChange={onChange}
                 required={required}
                 disabled={disable}
+                autoComplete={"off"}
                 onWheel={(e) => (e.target as HTMLInputElement).blur()}
             />
             <p className="error">{error}</p>

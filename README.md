@@ -24,6 +24,7 @@ import {
     Switch,
     Tabs,
     Spinner,
+    Radio
 } from "@persistenceone/pstake-ui-components";
 ```
 
@@ -34,6 +35,8 @@ import {
     useLocalStorage, 
     useWindowSize,
     useOnClickOutside,
+    useOnlineStatus,
+    useSortableTable
 } from "@persistenceone/pstake-ui-components";
 ```
 

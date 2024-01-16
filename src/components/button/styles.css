@@ -22,6 +22,15 @@
     height: 32px;
 }
 
+.appButton.auto {
+    font-size: 14px;
+    padding: 8px 16px;
+    font-weight: 600;
+    line-height: 21px;
+    height: 37px;
+}
+
+
 /* primary button styles */
 .appButton.primary {
     @apply bg-primary-500;
@@ -51,6 +60,7 @@
 
 .appButton.secondary:disabled{
     @apply bg-black-200;
+    @apply border-black-200;
     @apply text-white-700;
 }
 
